@@ -146,11 +146,11 @@ class QatrosController {
 
 	async updateData ({response,request}){
 		try{
-			const Inputs = request.only(['id_produk','name','description'])
+			const Inputs = request.only(['kode','name','description'])
 
 			const update = await Database
 				.table('t_product')
-				.where('id_produk',Inputs.id_produk)
+				.where('id_produk',Inputs.kode)
 				.update({
 					name        : Inputs.name,
 					description : Inputs.description
@@ -173,11 +173,11 @@ class QatrosController {
 
 	async hapusData ({response,request}){
 		try{
-			const Inputs = request.only(['id_produk'])
+			const Inputs = request.only(['kode'])
 
 			const hapus = await Database
 				.table('t_product')
-				.where('id_produk',Inputs.id_produk)
+				.where('id_produk',Inputs.kode)
 				.delete()
 
 			if (hapus) {

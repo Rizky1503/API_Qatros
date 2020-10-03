@@ -1,0 +1,33 @@
+step awal
+	1. install node js
+	2. npm install
+
+Routes
+1. get all items  =  
+	method = get
+	url    = http://127.0.0.1:7882/api/qatros/Allitem
+
+2. get items by code or name
+	method = post
+	url    = http://127.0.0.1:7882/api/qatros/ItemNameKode
+	params = name,kode
+
+3. get single item by code
+	method = post
+	url    = http://127.0.0.1:7882/api/qatros/itemKode
+	params = kode
+
+4. create new item (duplicate validation based on name will be required)
+	method = post
+	url    = http://127.0.0.1:7882/api/qatros/insertData
+	params = name,description
+
+5. update existing item by code
+	method = post
+	url    = http://127.0.0.1:7882/api/qatros/updateData
+	params = kode,name,description
+
+6. delete item by code
+	method = post
+	url    = http://127.0.0.1:7882/api/qatros/hapusData
+	params = kode
